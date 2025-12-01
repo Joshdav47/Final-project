@@ -9,11 +9,9 @@ def bankSimulation(customers, tellers):
     queue = []
     available_tellers = tellers.copy()
     print("Bank is open for service!")
-
-    for customer in customers:
-        while "VIP" in customer:
-            if available_tellers and "fast" in available_tellers:
-                available_tellers.remove("fast")
+    while "VIP" in customers:
+         if available_tellers and "fast" in available_tellers:
+            available_tellers.remove("fast")
                 service = random.choice(service)
                 print(f"VIP customer is being served by fast teller for {service}.")
                 if service == "deposit":
@@ -47,6 +45,7 @@ def bankSimulation(customers, tellers):
                 available_tellers.append("slow")
             else:
                 print("No tellers available for VIP customer, waiting...")
+                customers
                 queue.append("VIP")
 
 def main():
